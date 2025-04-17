@@ -9,7 +9,7 @@ uploaded_file = st.file_uploader("Upload FBA Inventory Report (CSV)", type=["csv
 
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
-    restock_df, aged_df, no_sale_df = generate_insights(df)
+    restock_df, aged_df, no_sale_df, aging_summary, velocity_df = generate_insights(df)
 
     st.success("✅ File processed successfully!")
 
